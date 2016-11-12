@@ -19,19 +19,20 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getCurrentDate() {
+    func getCurrentDate() -> String{
         //  Get the current date of the user and return it to be used for the parsing data
-        let c = NSDateComponents()
-        _ = c.year
-        _ = c.month
-        _ = c.day
+        let date = NSDate()
+        let calendar = NSCalendar.current
+        let day = calendar.component(.day, from: date as Date)
+        let month = calendar.component(.month, from: date as Date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let nameDay = dateFormatter.string(from: date as Date)
+        print(month)
+        print(nameDay)
+        print(day)
         
-        let gregorian = NSCalendar(identifier:NSCalendar.Identifier.gregorian)
-        let date = gregorian!.date(from: c as DateComponents)
-        
-        print(date!)
-        
-        //return date
+        return nameDay
     }
     
     func webDataCall() -> Void {
