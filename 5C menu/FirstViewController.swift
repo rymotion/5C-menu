@@ -36,16 +36,12 @@ class FirstViewController: UIViewController {
     }
     
     func webDataCall() -> Void {
-        if let url = URL(string:"https://aspc.pomona.edu/menu/"){
-            do{
-                let dataCall = try String(contentsOf: url)
-                print(dataCall)
-            }catch{
-                
-            }
-        } else{
-            
-        }
+        let cafe1 = URL(string: "https://www.pomona.edu/administration/dining/menus/frank")
+        let cafe2 = URL(string: "https://www.pomona.edu/administration/dining/menus/frary")
+        let cafe3 = URL(string: "https://www.pomona.edu/administration/dining/menus/oldenborg")
+        let cafe4 = URL(string: "http://collins-cmc.cafebonappetit.com")
+        let cafe5 = URL(string: "http://pitzer.cafebonappetit.com")
+        let cafe6 = URL(string: "https://hmc.sodexomyway.com/dining-choices/index.html")
         
     }
 }
